@@ -1,10 +1,11 @@
-console.log("Starting");
+const request = require("request");
 
-setTimeout(() => {
-  console.log("2 second time");
-}, 2000);
+//http://api.weatherstack.com/current?access_key=378ded7c846cfd0a53dfadaed48d1df5&query=37.8267,-122.4233
 
-setTimeout(() => {
-  console.log("0 second time");
-}, 0);
-console.log("Stopping");
+const url =
+  "http://api.weatherstack.com/current?access_key=378ded7c846cfd0a53dfadaed48d1df5&query=37.8267,-122.4233";
+
+request({ url: url }, (error, response) => {
+  const data = JSON.parse(response.body);
+  console.log(data.current);
+});
