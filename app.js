@@ -7,6 +7,7 @@ const url =
 
 request({ url: url, json: true }, (error, response) => {
   // console.log(response.body.current);
+  console.log(response.body.current.weather_descriptions[0]);
   console.log(
     "It is currently " +
       response.body.current.temperature +
@@ -14,3 +15,12 @@ request({ url: url, json: true }, (error, response) => {
       response.body.current.temperature
   );
 });
+
+const locationUrl =
+  "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoieXVyaXliZXJlenNreXkiLCJhIjoiY2tkNmYwanY2MXMydDJybDVicGV0eTVrNiJ9.lFm9S1mFngtkE8weei7WVg&limit=1";
+
+request({ url: locationUrl, json: true }, (error, response) => {
+  console.log("Latitude " + response.body.features[0].center[0]);
+  console.log("Longtitute " + response.body.features[0].center[1]);
+});
+//
