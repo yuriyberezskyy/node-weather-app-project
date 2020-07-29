@@ -20,7 +20,7 @@ const locationUrl =
   "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoieXVyaXliZXJlenNreXkiLCJhIjoiY2tkNmYwanY2MXMydDJybDVicGV0eTVrNiJ9.lFm9S1mFngtkE8weei7WVg&limit=1";
 
 request({ url: locationUrl, json: true }, (error, response) => {
-  console.log("Latitude " + response.body.features[0].center[0]);
-  console.log("Longtitute " + response.body.features[0].center[1]);
+  console.log("Latitude " + response.body.features[0].center[1]);
+  console.log("Longtitude " + response.body.features[0].center[0]);
 });
 //
