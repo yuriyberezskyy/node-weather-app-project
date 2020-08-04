@@ -5,7 +5,7 @@ const forecast = require("./utils/forecast");
 
 console.log("The weather for today: ");
 
-geocode("Brooklyn", (error, data) => {
+geocode(process.argv[2], (error, data) => {
   if (error) {
     return console.log(error);
   }
